@@ -1,0 +1,13 @@
+function y=diferenciascentr
+f=input ('Ingrese la funcion f: ');
+x0=input('Ingrese el punto donde se desea evaluar la diferencia :');
+h=0.001;
+f2=subs(f,x0+2*h);
+f1=subs(f,x0+h);
+f0=subs(f,x0);
+f_1=subs(f,x0-h);
+f_2=subs(f,x0-2*h);
+primeraderivada=(f1-f_1)/(2*h)
+segundaderivada=(f1-2*f0+f_1)/h^2
+terceraderivada=(f2-2*f1+2*f_1-f_2)/(2*h^3)
+cuartaderivada=(f2-4*f1+6*f0-4*f_1+f_2)/h^4
